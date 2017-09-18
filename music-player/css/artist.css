@@ -1,0 +1,104 @@
+/** artist SORTED SONG LIST **/
+div#artistContainer{
+    margin: 0px;
+    padding: 0px;
+    overflow-y: auto;
+    overflow-x:hidden;
+}
+div#artistWrapper{
+    position: relative;
+}
+div.artists{
+    width  : 32.75%;
+    height: 150px;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0px;
+    text-align: center;
+    transition: left 1s ease,top 1s ease;
+}
+@media only screen and (max-width:999px){
+    div.artists:nth-child(3n-2){
+        left:0;
+    }
+    div.artists:nth-child(3n-1){
+        left:32.75%;
+    }
+    div.artists:nth-child(3n){
+        left:65.5%;
+    }
+    div.artistSortedTables{
+        height: 600px;
+    }
+    div#artistSortedTable1{
+        -webkit-transform: translate3d(0px,0px,0px);
+    }
+    div#artistSortedTable2{
+        -webkit-transform: translate3d(0px,600px,0px);
+    }
+    div#artistSortedTable3{
+        -webkit-transform: translate3d(0px,1200px,0px);
+    }
+}
+@media only screen and (min-width:1000px){
+    div.artists{
+        width: 24.475%;
+    }
+    div.artists:nth-child(4n-3){
+        left:0;
+    }
+    div.artists:nth-child(4n-2){
+        left:24.475%;
+    }
+    div.artists:nth-child(4n-1){
+        left:48.95%;
+    }
+    div.artists:nth-child(4n){
+        left: 73.425%;
+    }
+    div#artistSortedTable1{
+        -webkit-transform: translate3d(0px,0px,0px);
+    }
+    div#artistSortedTable2{
+        -webkit-transform: translate3d(0px,450px,0px);
+    }
+    div#artistSortedTable3{
+        -webkit-transform: translate3d(0px,900px,0px);
+    }
+}
+div.artists img{
+    height: 110px;
+}
+div.artists div.first{
+    height: 110px;
+}
+div.artists div.second{
+    width: 100%;
+    height: 40px;
+    display: table;
+}
+div.artists p{
+    width: 100%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0px;
+}
+div.artists div.song{
+    height : 40px !important;
+}
+div.artistSortedTables{
+    position: absolute;
+}
+#artistContent{
+    width : 100%;
+    height: 150px;
+    background-color: #bbbbbb;
+    overflow: auto;
+    position: absolute;
+    z-index:15;
+    padding: 0px;
+    -webkit-transform: translate3d(0px,0px,0px);
+    border-radius: 8px;
+}

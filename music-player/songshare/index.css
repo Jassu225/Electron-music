@@ -1,0 +1,124 @@
+*{
+    box-sizing: border-box;
+}
+    html,body{
+    height: 100%;
+    overflow: hidden;
+    margin: 0px;
+}
+#searching-div{
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+#sr-buttons-div{
+    display: table-cell;
+    margin: auto;
+    font-size: 30px;
+    text-align: center;
+    vertical-align: middle;
+}
+#searching-div img{
+    width:40px;
+    height: 40px;
+}
+.sr-buttons{
+    width : 200px;
+    height: 50px;
+    display: table;
+    margin: 0px auto;
+    background-color:dodgerblue;
+}
+.sr-buttons p{
+    display: table-cell;
+    height: 100%;
+    line-height: 100%;
+    vertical-align: middle;
+    margin:0px;
+}
+.sr-buttons:nth-child(1){
+    margin-bottom: 10px;
+}
+#sender{
+    display: none;
+    width: 500px;
+    height: 400px;
+    margin: 0px auto;
+    overflow: auto;
+}
+#receiver{
+    display: none;
+    width: 500px;
+    height: 400px;
+    margin: 0px auto;
+    overflow: auto;
+}
+#btns{
+    height: 50px;
+    display: none;
+}
+#btns-container{
+    display: table-cell;
+    vertical-align: middle;
+}
+.btns{
+    width: 100px;
+    height: 25px;
+    background-color: lightseagreen;
+    position: relative;
+    left: 450px;
+}
+.btns p{
+    margin: 0px;
+    text-align: center;
+    margin-top : 4px;
+}
+.song{
+    width: 470px;
+    height: 60px;
+    margin: 5px 5px 8px 10px;
+    background-color: cadetblue;
+    box-shadow: -4px 4px 10px rgba(0,0,0,0.7);
+    display: inline-table;
+    text-align: center;
+}
+.song-wrapper{
+    width: 380px;
+    display: table-cell;
+    margin: auto;
+    vertical-align: middle;
+}
+.signal{
+    display: inline-block;
+    width: 50px;
+    transform: translateY(40px);
+}
+#dialog-panel{
+    width: 100%;
+    height: 100%;
+    display: none;
+    text-align: center;
+}
+#msg-box{
+    display: table-cell;
+    margin: auto;
+    vertical-align: middle;
+}
+/* ALL MUSIC DIVISION SCROLL BAR */
+
+div.scroll-music::-webkit-scrollbar{
+    width: 10px;
+} 
+
+div.scroll-music::-webkit-scrollbar-track {
+    /*box-shadow: inset 0 0 6px rgba(0,0,0,0.4); */
+    border-radius: 5px;
+    border: 1px solid #666666;
+    visibility: hidden;
+}
+
+div.scroll-music::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    background-color : rgba(77,77,77,0.5);
+}

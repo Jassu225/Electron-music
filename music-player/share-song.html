@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Song Share</title>
+		<link rel="stylesheet" href="./songshare/index.css" />
+	</head>
+	<body>
+		<div id="searching-div">
+			<div id="sr-buttons-div">
+				<div class="sr-buttons" onclick="senderPanel()"><p>Send</p></div>
+				<div class="sr-buttons" onclick="receiverPanel()"><p>Receive</p></div>
+			</div>
+			<div id="sender" class="second-step scroll-music"></div>
+			<div id="receiver" class="second-step"></div>
+			<div id="btns" class="second-step">
+				<div id="btns-container">
+					<div id="send-btn" class="btns" onclick="send()"><p>Send</p></div>
+					<!--<div id="recv-btn" class="btns"><p>Receive</p></div>-->
+				</div>
+			</div>
+			<div id="dialog-panel">
+				<div id="msg-box">Initializing Server</div>
+			</div>
+		</div>
+	</body>
+	<script src="./songshare/songshare.js"></script>
+	<script src="./songshare/songjs.js"></script>
+	<script src="./songshare/server.js"></script>
+	<script src="./songshare/client.js"></script>
+</html>
