@@ -72,13 +72,21 @@ function call_meta_extractor(){
         if(fetched_songs_list.length == 0 && meta_extractor_caller_id){
             clearInterval(meta_extractor_caller_id);
             meta_extractor_caller_id = undefined;
+            document.getElementById('show-adding-songs').innerHTML = "";
             return;
         }
         
-        // showAddingSongsPage();
-        
         meta_extractor.extract_meta_data(fetched_songs_list.shift(), (song)=>{
-            complete_list.push(song);
+            if(song){
+                complete_list.push(song);
+                song._id = song.src;
+                var element = document.getElementById('show-adding-songs');
+                element.classList.remove("font-size-30");
+                element.innerHTML = `Adding ${song.src}`;
+                songsDB.insert(song, (err,newDoc)=>{
+                    console.log(newDoc);
+                });
+            }
             // console.log(song);
             semaphore = 0;
         });
