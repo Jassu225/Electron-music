@@ -54,6 +54,20 @@ div#add-songs{
 div#songs-container{
     background-color: #1D2120;
 }
+/****  ALBUM ****/
+div.album{
+    margin-top: 20px;
+}
+.image-container{
+    
+}
+.image{
+    
+}
+/*** INNER SONGS CONTAINER ***/
+div#inner-songs-container{
+    overflow: auto;
+}
 /** SIDE NAVIGATION BAR **/
 #side-navbar{
     background-color: rgba(26, 24, 23, 1);
@@ -75,4 +89,15 @@ div#songs-container{
 #footer{
     height: 60px;
     background-color: rgb(15,13,13);
+}
+/*** SEEK BAR ***/ 
+div#seek-bar{
+    width: 86%;
+    height: 5px;
+    border-radius: 3px;
+}
+
+div#current-time{
+    border-radius: 3px;
+    background-color: #256F9B;
 }

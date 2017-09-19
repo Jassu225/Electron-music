@@ -27,3 +27,33 @@ songsDB.count({}, function (err, count) {
         document.getElementById("no-songs").classList.remove("hide");
 });
 
+window.addEventListener('resize',setContainersSize);
+
+// Changing size of image containers
+function setContainersSize(){
+    var width = $("div#songs-container").width();
+
+    if( width <= 800 && !$('div.album').hasClass("col-3")){
+        removeColClasses($('div.album'));
+        $('div.album').addClass("col-3");
+    } else if( width > 800 && width <= 1000 && !$('div.album').hasClass("col-2_4")){
+        removeColClasses($('div.album'));
+        $('div.album').addClass("col-2_4");
+    } else if( width > 1000 && width <= 1030 && !$('div.album').hasClass("col-2")){
+        removeColClasses($('div.album'));
+        $('div.album').addClass("col-2");
+    } else if(width > 1030 && !$('div.album').hasClass("col-1_7")){
+        removeColClasses($('div.album'));
+        $('div.album').addClass("col-1_7");
+    }
+}
+
+function removeColClasses(element){
+    var col_classes = "col-1_7 col-2 col-2_4 col-3 col-4";
+    element.removeClass(col_classes);
+}
+
+setContainersSize();
+// Settings for "image" class
+// Makes height 100% if height > width
+// Makes width 100% otherwise
