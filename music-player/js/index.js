@@ -13,6 +13,8 @@ var fetched_songs_list = [];
 // CONTAINS META-DATA OF ALL SONGS
 var complete_list = [];
 
+// Top navigation bar hight
+var top_nav_height = "45px";
 // Variable which contains object of currently visible "MAIN SECTION" element 
 var active_main_section_division = document.getElementById("songs-container");
 var appdata = app.getPath("userData");

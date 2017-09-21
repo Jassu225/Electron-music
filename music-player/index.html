@@ -5,8 +5,8 @@
         <link rel="stylesheet" href="./css/index.css"/>
         <link rel="stylesheet" href="./css/main.css"/>
     </head>
-    <body>
-        <div id="top-navbar" class="">
+    <body class="position-relative">
+        <div id="top-navbar" class="position-absolute full-width">
             <div class="col-1 full-height">
                 <div class="table full-height center">
                     <div class="inline table-cell vertically-middle center">
@@ -31,27 +31,28 @@
                 </div>
             </div>
         </div>
-        <div id="main-section" class="position-relative">
-            <div id="side-navbar" class="z-index-2 col-2 full-height position-absolute font-helvetica center-text text-white dont-select-text">
-                <div class="cursor-pointer full-width height-40 table side-navbar-child">
-                    <div class="table-cell vertically-middle">Home</div>
-                </div>
-                <div class="full-width height-40 table side-navbar-child cursor-pointer">
-                    <div class="table-cell vertically-middle">Add Songs</div>
-                </div>
-                <div class="full-width height-40 table side-navbar-child cursor-pointer">
-                    <div class="table-cell vertically-middle">Song Share</div>
-                </div>
-                <div class="full-width height-40 table side-navbar-child cursor-pointer">
-                    <div class="table-cell vertically-middle">Settings</div>
-                </div>
-                <div class="full-width height-40 table side-navbar-child cursor-pointer">
-                    <div class="table-cell vertically-middle">About</div>
-                </div>
-                <div class="full-width height-40 table side-navbar-child cursor-pointer">
-                    <div class="table-cell vertically-middle">Feedback</div>
-                </div>
+        <div id="middle-section" class="position-absolute full-width">
+        <div id="side-navbar" class="z-index-2 col-2 full-height inline position-absolute font-helvetica center-text text-white dont-select-text">
+            <div class="cursor-pointer full-width height-40 table side-navbar-child">
+                <div class="table-cell vertically-middle">Home</div>
             </div>
+            <div class="full-width height-40 table side-navbar-child cursor-pointer">
+                <div class="table-cell vertically-middle">Add Songs</div>
+            </div>
+            <div class="full-width height-40 table side-navbar-child cursor-pointer">
+                <div class="table-cell vertically-middle">Song Share</div>
+            </div>
+            <div class="full-width height-40 table side-navbar-child cursor-pointer">
+                <div class="table-cell vertically-middle">Settings</div>
+            </div>
+            <div class="full-width height-40 table side-navbar-child cursor-pointer">
+                <div class="table-cell vertically-middle">About</div>
+            </div>
+            <div class="full-width height-40 table side-navbar-child cursor-pointer">
+                <div class="table-cell vertically-middle">Feedback</div>
+            </div>
+        </div>
+        <div id="main-section" class="position-relative col-12 full-height float-right">
             <div id="add-songs" class="full-width full-height center-text table position-absolute hide">
                 <div class="table-cell vertically-middle text-white font-helvetica dont-select-text">
                     <p id="show-adding-songs" class="font-size-30 margin-20-0px cursor-default">No songs here.</p>
@@ -71,7 +72,7 @@
             </div>
             <div id="songs-container" class="full-width full-height text-white font-helvetica table position-absolute dont-select-text">
                 <p id="no-songs" class="table-cell vertically-middle font-size-30 margin-20-0px cursor-default center-text hide">No songs here.</p>
-                <div id="inner-songs-container" class="position-relative full-height col-12">
+                <div id="inner-songs-container" class="position-relative full-height full-width">
                     <div id="albums-container" class="position-absolute full-width full-height">
                         <div class="album inline col-3 height-190">
                             <div class="image-container center-text height-150 width-150">
@@ -301,7 +302,8 @@
                 </div>
             </div>
         </div>
-        <div id="footer">
+        </div>
+        <div id="footer" class="position-absolute full-width">
             <div class="padding-10-0">
                 <div id="seek-bar" class="center">
                     <div id="current-time" class="full-height"></div>

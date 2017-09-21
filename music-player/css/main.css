@@ -1,8 +1,10 @@
 /* TOP NAVIGATION BAR */
 #top-navbar{
+    top: 0px;
     background-color: #0F0D0D;     /*#0099cc*/
     text-align: center;
     height: 45px;
+    transform: translate(0px,0px);
 }
 
 div#top-nav-menu div div:hover{
@@ -32,12 +34,28 @@ div#top-nav-menu div div:hover{
     width: 25px;
     height: 3px;
     background-color: whitesmoke;
-    margin: 4px 0;
+    margin: 4px 0px;
 }
 
-/* MAIN SECTION */
-#main-section{
+/* MIDDLE SECTION */
+div#middle-section{
     height: calc(100% - 105px);
+    transform: translate(0px, 45px);
+}
+
+/** SIDE NAVIGATION BAR **/
+#side-navbar{
+    background-color: rgba(26, 24, 23, 1);
+    transform: translate(calc(-1 * 100%), 0px);
+    transition: transform 0.5s ease;
+}
+.side-navbar-child:nth-child(even){
+    background-color: #292727;
+}
+
+/** MAIN SECTION **/
+#main-section{
+    transition: width 0.5s ease;
 }
 
 /** NO-SONGS DIVISION **/
@@ -68,16 +86,6 @@ div.album{
 div#inner-songs-container{
     float: right;
     overflow: auto;
-    transition: width 0.5s ease;
-}
-/** SIDE NAVIGATION BAR **/
-#side-navbar{
-    background-color: rgba(26, 24, 23, 1);
-    transform: translate(calc(-1 * 100%),0px);
-    transition: transform 0.5s ease;
-}
-.side-navbar-child:nth-child(even){
-    background-color: #292727;
 }
 /**** BUTToN IN NO-SONGS DIVISION ****/
 .button-no-songs{
@@ -89,6 +97,7 @@ div#inner-songs-container{
 
 /* FOOTER */
 #footer{
+    bottom: 0px;
     height: 60px;
     background-color: rgb(15,13,13);
 }
