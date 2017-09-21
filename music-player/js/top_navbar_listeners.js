@@ -6,5 +6,7 @@ var x_values = ["calc(-1 * 100%)","0px"];
 document.getElementById('menu-icon').addEventListener('click', ()=>{
     const side_navbar = document.getElementById('side-navbar');
     side_navbar.style.transform = `translate(${x_values[side_navbar_toggle]}, 0px)`;
+    // document.getElementById('inner-songs-container').classList.add();
+    $('#inner-songs-container').toggleClass("col-12 col-10");
     side_navbar_toggle = 1 - side_navbar_toggle;
 });

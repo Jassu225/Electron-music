@@ -66,7 +66,9 @@ div.album{
 }
 /*** INNER SONGS CONTAINER ***/
 div#inner-songs-container{
+    float: right;
     overflow: auto;
+    transition: width 0.5s ease;
 }
 /** SIDE NAVIGATION BAR **/
 #side-navbar{
@@ -100,4 +102,29 @@ div#seek-bar{
 div#current-time{
     border-radius: 3px;
     background-color: #256F9B;
+}
+div#backward{
+    height: 20px;
+}
+div.backward-btn{
+    float: left;
+    width: 0px;
+    height: 0px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid royalblue;
+}
+div#play_pause{
+    height: 20px;
+}
+div#forward{
+    height: 20px;
+}
+div.forward-btn{
+    float: left;
+    width: 0px;
+    height: 0px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid royalblue;
 }
