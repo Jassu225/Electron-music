@@ -72,7 +72,7 @@ function call_meta_extractor(){
         if(fetched_songs_list.length == 0 && meta_extractor_caller_id){
             clearInterval(meta_extractor_caller_id);
             meta_extractor_caller_id = undefined;
-            document.getElementById('show-adding-songs').innerHTML = "";
+            document.getElementById('show-adding-songs').innerHTML = "Restart the player";
             return;
         }
         
@@ -83,12 +83,74 @@ function call_meta_extractor(){
                 var element = document.getElementById('show-adding-songs');
                 element.classList.remove("font-size-30");
                 element.innerHTML = `Adding ${song.src}`;
-                songsDB.insert(song, (err,newDoc)=>{
-                    console.log(newDoc);
-                });
+                insertIntoSongsDB(song);
+                insertIntoAlbumsDB(song.album,song.src,song.cover);
+                insertIntoArtistsDB(song.artist,song.src);
             }
             // console.log(song);
             semaphore = 0;
         });
     }
+}
+
+function insertIntoSongsDB(song){
+    songsDB.insert(song, (err,newDoc)=>{
+        if(err)
+            console.log(err);
+        else{
+            console.log(newDoc);
+            view_port.has_data = true;
+        }
+    });
+}
+
+function insertIntoAlbumsDB(album,path,cover){
+    albumsDB.findOne({_id: album},(err,doc)=>{
+        if(err)
+            console.log(err);
+        else if(doc){
+            console.log(doc);
+            albumsDB.update({ _id: album }, { $push: { songs: path } }, {}, ()=>{
+
+            });
+        } else{
+            albumsDB.insert({
+                _id: album,
+                cover: cover,
+                songs: [path]
+            },(err,newDoc)=>{
+                if(err)
+                    console.log(err);
+                else{
+                    console.log('album created successfully');
+                    console.log(newDoc);
+                }
+            });
+        }
+    });
+}
+
+function insertIntoArtistsDB(artist,path){
+    artistsDB.findOne({_id: artist},(err,doc)=>{
+        if(err)
+            console.log(err);
+        else if(doc){
+            console.log(doc);
+            artistsDB.update({ _id: artist }, { $push: { songs: path } }, {}, ()=>{
+                
+            });
+        } else{
+            artistsDB.insert({
+                _id: artist,
+                songs: [path]
+            },(err,newDoc)=>{
+                if(err)
+                    console.log(err);
+                else{
+                    console.log('artist created successfully');
+                    console.log(newDoc);
+                }
+            });
+        }
+    });
 }

@@ -53,6 +53,10 @@ div#middle-section{
     background-color: #292727;
 }
 
+/** ALBUM PAGE **/
+div#album-page{
+    background-color: #181B17;
+}
 /** MAIN SECTION **/
 #main-section{
     transition: width 0.5s ease;
@@ -86,6 +90,10 @@ div.album{
 div#inner-songs-container{
     float: right;
     overflow: auto;
+}
+/**** ALBUM DISPLAY PAGE ****/
+div#album-page{
+    background-color: #33333B;
 }
 /**** BUTToN IN NO-SONGS DIVISION ****/
 .button-no-songs{

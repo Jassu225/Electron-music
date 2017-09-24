@@ -11,6 +11,7 @@
   "dependencies": {
     "destroy": "^1.0.4",
     "electron": "^1.7.6",
+    "image-size": "^0.6.1",
     "musicmetadata": "^2.0.5",
     "nedb": "^1.8.0",
     "node-cmd": "^3.0.0",
