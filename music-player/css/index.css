@@ -19,6 +19,10 @@ html,body{
     vertical-align: middle;
 }
 
+/** BACKGROUND COLOR **/
+.background-black{
+    background-color: #262B29;
+}
 /** BORDER **/
 .no-border{
     border: 0px;
@@ -167,13 +171,20 @@ html,body{
 .padding-13_5-8{
     padding:13.5px 8px;
 }
-
 .padding-0-8{
     padding: 0px 12px;
 }
-
 .padding-10-0{
     padding: 10px;
+}
+.padding-7-0{
+    padding: 7px;
+}
+.padding-10{
+    padding: 10px;
+}
+.padding-30{
+    padding: 30px;
 }
 /** POSITION **/
 .position-relative{
@@ -183,10 +194,17 @@ html,body{
     position: absolute;
 }
 
+/** SCROLLING **/
+.overflow-auto{
+    overflow: auto;
+}
 /** SIZE **/
 
 .full-width{
     width: 100%;
+}
+.width-0_9{
+    width: 90%;
 }
 .width-70{
     width: 70px;
@@ -194,11 +212,17 @@ html,body{
 .width-124{
     width: 124px;
 }
+.width-120{
+    width: 120px;
+}
 .width-160{
     width: 160px;
 }
 .full-height{
     height: 100%;
+}
+.height-0_9{
+    height: 90%;
 }
 .height-18{
     height: 18px;
@@ -212,11 +236,17 @@ html,body{
 .height-150{
     height: 150px;
 }
+.height-160{
+    height: 160px;
+}
 .height-190{
     height: 190px;
 }
 .height-200{
     height: 200px;
+}
+.height-264{
+    height: 264px;
 }
 /** TEXT COLORS **/
 .text-white{
@@ -229,8 +259,14 @@ html,body{
 }
 
 /** Z-INDEX I.E. STACKING OF ELEMENTS**/
+.z-index-1{
+    z-index: 1;
+}
 .z-index-2{
     z-index: 2;
+}
+.z-index-1000{
+    z-index: 1000;
 }
 /*************************************************************************************************************************/
 

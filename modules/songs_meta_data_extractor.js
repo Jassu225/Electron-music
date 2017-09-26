@@ -55,6 +55,7 @@ var metadata_extractor = {
             } else {
                 song['cover'] = './images/song.png';
             }
+            // console.log(__dirname.substring(0,));
             // songsDB.put(`${l}`, song);
         });
         

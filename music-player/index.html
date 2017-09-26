@@ -73,289 +73,296 @@
             <div id="songs-container" class="full-width full-height text-white font-helvetica table position-absolute dont-select-text">
                 <p id="no-songs" class="table-cell vertically-middle font-size-30 margin-20-0px cursor-default center-text hide">No songs here.</p>
                 <div id="inner-songs-container" class="position-relative full-height full-width">
-                    <div id="album-page" class="position-absolute full-width full-height hide">
-                        <div id="selected-album-cover">
+                    <div id="album-page" class="position-absolute full-width full-height text-white font-helvetica z-index-1000 hide">
+                        <div class="height-264">
+                            <div id="backToAlbum" class="inline float-right padding-10 cursor-pointer">Back to albums</div>
+                            <div class="inline float-left padding-30">
+                                <img id="selected-album-cover" class="height-200" src=""/>
+                            </div>
+                        </div>
+                        <div class="overflow-auto">
+                            <div id="songs-in-album-container"></div>
                         </div>
                     </div>
-                    <div id="albums-container" class="position-absolute full-width full-height">
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                    <div id="albums-container" class="position-absolute full-width full-height z-index-1000">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
-                        <div class="album inline col-3 height-240 center-text" album="">
-                            <div class="image-container table height-200 width-160">
+                        <div class="album inline col-3 height-240 center-text hide" album="">
+                            <div class="image-container table height-200 width-160 center background-black">
                                 <div class="table-cell vertically-middle center">
-                                <img class="image height-150" src="C:\Users\jaswa\AppData\Roaming\Electron\UserData\song-images\C\Users\jaswa\Music\A-Aa\Yaa Yaa [RockOnMp3.com].jpg" data-src="" alt="album pic"/>
+                                <img class="image" src="" data-src=""/>
                                 </div>
                             </div>
                             <div class="album-description">
-                                <p class="no-margin height-40">A Aa Movie Album</p>
+                                <p class="no-margin height-40"></p>
                             </div>
                         </div>
                     </div>
@@ -364,10 +371,13 @@
         </div>
         </div>
         <div id="footer" class="position-absolute full-width">
-            <div class="padding-10-0">
-                <div id="seek-bar" class="center">
-                    <div id="current-time" class="full-height"></div>
-                </div>
+            <div class="padding-7-0 text-white font-helvetica">
+                <ul class="center">
+                    <div id="current-time" class="inline">--:--</div>
+                    <div id="seek-bar" class="inline"><div id="current-position" class="full-height"></div></div>
+                    <div id="end-time" class="inline">--:--</div>
+                </ul>
+                <audio id="audio-player"><source src="" /></audio>
             </div>
             <div>
                 <div class="width-124 height-20 center">
@@ -394,5 +404,6 @@
         <script src="./js/side_navbar_listeners.js"></script>
         <script src="./js/main_section_listeners.js"></script>
         <script src="./js/directory_file_selector.js"></script>
+        <script src="./js/player_functions.js"></script>
     </body>
 </html>

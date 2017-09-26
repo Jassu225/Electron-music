@@ -53,10 +53,6 @@ div#middle-section{
     background-color: #292727;
 }
 
-/** ALBUM PAGE **/
-div#album-page{
-    background-color: #181B17;
-}
 /** MAIN SECTION **/
 #main-section{
     transition: width 0.5s ease;
@@ -89,13 +85,24 @@ div.album{
 /*** INNER SONGS CONTAINER ***/
 div#inner-songs-container{
     float: right;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 /**** ALBUM DISPLAY PAGE ****/
 div#album-page{
-    background-color: #33333B;
+    background-color: #262629;
+    transition: z-index 1s ease;
 }
-/**** BUTToN IN NO-SONGS DIVISION ****/
+/******* SONGS IN SELECTED ALBUM *******/
+div.songs-in-album:nth-child(odd){
+    background-color: #394347;
+}
+/**** ALBUMS CONTAINER ****/
+div#albums-container{
+    background-color: #313335;
+    transition: z-index 1s ease;
+}
+/**** BUTTON IN NO-SONGS DIVISION ****/
 .button-no-songs{
     width: 140px;
     height: 36px;
@@ -116,7 +123,7 @@ div#seek-bar{
     border-radius: 3px;
 }
 
-div#current-time{
+div#current-position{
     border-radius: 3px;
     background-color: #256F9B;
 }

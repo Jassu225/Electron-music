@@ -2,7 +2,7 @@
 // All div children of side-navbar are in odd indices because there  exists a text node b/w each child
 // These text nodes are generated because of intendation.
 
-// Adding Listener to "Home" tab in side-navbar 
+// Adding Listener to "Home" tab in side-navbar
 document.getElementById('side-navbar').childNodes[1].addEventListener("click", ()=>{
     if(view_port.active_main_section_division.id != 'songs-container'){
         view_port.active_main_section_division.classList.add('hide');

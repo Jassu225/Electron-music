@@ -3,6 +3,7 @@ const {app,dialog} = require('electron').remote;    //first usage in directory_s
 const {BrowserWindow} = require('electron').remote;
 const fs = require('fs');               //first usage in directory_selector.js
 const database = require('nedb');
+const sizeOf = require('image-size');
 const appdata = app.getPath("userData");
 
 //All changeable properties of view port
@@ -27,6 +28,9 @@ var fetched_songs_list = [];
 var complete_list = [];
 var albums_list = [];
 var artists_list = [];
+
+// Audio player variables
+var audio_player = document.getElementById("audio-player");
 
 //Required databases for songs, albums and artists
 var songsDB = new database({
@@ -60,10 +64,25 @@ albumsDB.find({}, (err,docs)=>{
     if(docs){
         albums_list = Array.from(docs);
         var albums = $('.album');
-        console.log(albums[0].childNodes[3].childNodes[1]);
+        console.log(albums[0].childNodes[1].childNodes[1].childNodes[1]);
         for(var i = 0; i < albums_list.length && i < 28; i++){
+            // console.log(albums_list[i].cover);
+            try{
+                var dimensions = sizeOf(albums_list[i].cover);
+                // console.log(dimensions);
+                if(dimensions.width >= dimensions.height){
+                    albums[i].childNodes[1].childNodes[1].childNodes[1].classList.add("width-120");
+                    // albums[i].childNodes[1].childNodes[1].childNodes[1].classList.add("full-width");
+                } else{
+                    albums[i].childNodes[1].childNodes[1].childNodes[1].classList.add("height-160");
+                    // albums[i].childNodes[1].childNodes[1].childNodes[1].classList.add("full-height");
+                }
+            } catch(err){
+                console.log(err.code);
+            }
             albums[i].childNodes[1].childNodes[1].childNodes[1].src = albums_list[i].cover;      //Image
             albums[i].childNodes[3].childNodes[1].innerHTML = albums_list[i]._id;
+            albums[i].classList.remove("hide");
         }
     }
 });
@@ -82,25 +101,45 @@ function setContainersSizeAfter520ms(){
 function setContainersSize(){
     var width = $("div#songs-container").width();
 
-    if(width <= 700 && !$('div.album').hasClass("col-4")){
-        removeColClasses($('div.album'));
-        $('div.album').addClass('col-4');
-    } else if( width <= 800 && !$('div.album').hasClass("col-3")){
-        removeColClasses($('div.album'));
-        $('div.album').addClass("col-3");
+    if(width <= 700){
+
+        if(!$('div.album').hasClass("col-4")){
+            removeColClasses($('div.album'));
+            $('div.album').addClass('col-4');
+        }
+
+    } else if( width <= 800){
+
+        if(!$('div.album').hasClass("col-3")){
+            removeColClasses($('div.album'));
+            $('div.album').addClass("col-3");
+        }
         view_port.capacity = 12;
-    } else if( width <= 1000 && !$('div.album').hasClass("col-2_4")){
-        removeColClasses($('div.album'));
-        $('div.album').addClass("col-2_4");
+
+    } else if( width <= 1000){
+
+        if(!$('div.album').hasClass("col-2_4")){
+            removeColClasses($('div.album'));
+            $('div.album').addClass("col-2_4");
+        }
         view_port.capacity = 15;
-    } else if( width <= 1200 && !$('div.album').hasClass("col-2")){
-        removeColClasses($('div.album'));
-        $('div.album').addClass("col-2");
+
+    } else if( width <= 1200){
+
+        if(!$('div.album').hasClass("col-2")){
+            removeColClasses($('div.album'));
+            $('div.album').addClass("col-2");
+        }
         view_port.capacity = 18;
-    } else if(width > 1200 && !$('div.album').hasClass("col-1_7")){
-        removeColClasses($('div.album'));
-        $('div.album').addClass("col-1_7");
+
+    } else if(width > 1200){
+
+        if(!$('div.album').hasClass("col-1_7")){
+            removeColClasses($('div.album'));
+            $('div.album').addClass("col-1_7");
+        }
         view_port.capacity = 21;
+
     }
 }
 
