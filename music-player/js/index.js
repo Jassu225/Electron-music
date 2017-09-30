@@ -13,7 +13,7 @@ var view_port = {
     next_song: 0,             //Index of song to be loaded next
     next_album: 0,             //Index of song to be loaded next
     next_artist: 0,             //Index of song to be loaded next
-    capacity: 0,                //max. no. of documents that can be fitted on view port
+    row_capacity: 0,                //max. no. of documents that can be fitted on view port
     active_main_section_division: document.getElementById("songs-container")     // Variable which contains object of currently visible "MAIN SECTION" element
 };
 // Used to fetch songs from directories
@@ -31,6 +31,7 @@ var artists_list = [];
 
 // Audio player variables
 var audio_player = document.getElementById("audio-player");
+var play_pause = $("#play_pause");
 
 //Required databases for songs, albums and artists
 var songsDB = new database({
@@ -101,44 +102,45 @@ function setContainersSizeAfter520ms(){
 function setContainersSize(){
     var width = $("div#songs-container").width();
 
-    if(width <= 700){
+    if(width <= 700){       // 3 containers per row
 
         if(!$('div.album').hasClass("col-4")){
             removeColClasses($('div.album'));
             $('div.album').addClass('col-4');
         }
+        view_port.row_capacity = 3;
 
-    } else if( width <= 800){
+    } else if( width <= 900){       // 4 containers per row
 
         if(!$('div.album').hasClass("col-3")){
             removeColClasses($('div.album'));
             $('div.album').addClass("col-3");
         }
-        view_port.capacity = 12;
+        view_port.row_capacity = 4;
 
-    } else if( width <= 1000){
+    } else if( width <= 1100){      // 5 containers per row
 
         if(!$('div.album').hasClass("col-2_4")){
             removeColClasses($('div.album'));
             $('div.album').addClass("col-2_4");
         }
-        view_port.capacity = 15;
+        view_port.row_capacity = 5;
 
-    } else if( width <= 1200){
+    } else if( width <= 1200){      // 6 containers per row
 
         if(!$('div.album').hasClass("col-2")){
             removeColClasses($('div.album'));
             $('div.album').addClass("col-2");
         }
-        view_port.capacity = 18;
+        view_port.row_capacity = 6;
 
-    } else if(width > 1200){
+    } else if(width > 1200){        // 7 containers per row
 
         if(!$('div.album').hasClass("col-1_7")){
             removeColClasses($('div.album'));
             $('div.album').addClass("col-1_7");
         }
-        view_port.capacity = 21;
+        view_port.row_capacity = 7;
 
     }
 }

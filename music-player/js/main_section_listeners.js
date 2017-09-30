@@ -10,7 +10,10 @@ $("div.album").click((event)=>{
         var parent = document.getElementById("songs-in-album-container");
         var children = "";
         for(var i = 0; i < doc.songs.length; i++){
-            children += `<div class="songs-in-album padding-10 cursor-pointer" src="${doc.songs[i]}">${doc.songs[i].substring(doc.songs[i].lastIndexOf("/")+1)}</div>`;
+            var i1 = doc.songs[i].lastIndexOf('/');
+            var i2 = doc.songs[i].lastIndexOf('\\');
+            var index = i1 > i2 ? i1 : i2 ;
+            children += `<div class="songs-in-album padding-10 cursor-pointer" src="${doc.songs[i]}">${doc.songs[i].substring(index+1)}</div>`;
         }
         parent.innerHTML = children;
         addListenersToSongsInAlbum();

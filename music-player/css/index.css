@@ -153,7 +153,10 @@ html,body{
 .letter-spacing-1_5{
     letter-spacing: 1.5px;
 }
-
+/** LINE HEIGHT **/
+.line-height-40{
+    line-height: 40px;
+}
 /** MARGINS **/
 .no-margin{
     margin: 0px;
@@ -178,7 +181,7 @@ html,body{
     padding: 10px;
 }
 .padding-7-0{
-    padding: 7px;
+    padding: 7px 0px;
 }
 .padding-10{
     padding: 10px;
@@ -202,6 +205,9 @@ html,body{
 
 .full-width{
     width: 100%;
+}
+.width-0_86{
+    width: 86%;
 }
 .width-0_9{
     width: 90%;

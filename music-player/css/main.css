@@ -37,25 +37,27 @@ div#top-nav-menu div div:hover{
     margin: 4px 0px;
 }
 
-/* MIDDLE SECTION */
+/* ******************************************* MIDDLE SECTION ************************************************** */
 div#middle-section{
     height: calc(100% - 105px);
     transform: translate(0px, 45px);
+    background-color: #1E2323;
 }
 
 /** SIDE NAVIGATION BAR **/
 #side-navbar{
     background-color: rgba(26, 24, 23, 1);
     transform: translate(calc(-1 * 100%), 0px);
-    transition: transform 0.5s ease;
+    transition: transform 0.3s linear;
 }
 .side-navbar-child:nth-child(even){
-    background-color: #292727;
+    background-color: #0E0C0C;
 }
 
-/** MAIN SECTION **/
-#main-section{
-    transition: width 0.5s ease;
+/**  MAIN SECTION **/
+div#main-section{
+    transition: width 0.3s linear;
+    background-color: #1E2323;
 }
 
 /** NO-SONGS DIVISION **/
@@ -69,9 +71,6 @@ div#add-songs{
     background-color: #1E2323;
 }
 /** SONGS CONTAINER **/
-div#songs-container{
-    background-color: #1D2120;
-}
 /****  ALBUM ****/
 div.album{
     margin-top: 20px;
@@ -87,20 +86,22 @@ div#inner-songs-container{
     float: right;
     overflow-y: auto;
     overflow-x: hidden;
+    background-color: #1E2323;
 }
 /**** ALBUM DISPLAY PAGE ****/
 div#album-page{
-    background-color: #262629;
     transition: z-index 1s ease;
+    background-color: #1E2323;
 }
 /******* SONGS IN SELECTED ALBUM *******/
 div.songs-in-album:nth-child(odd){
-    background-color: #394347;
+    background-color: #161819;
 }
 /**** ALBUMS CONTAINER ****/
 div#albums-container{
-    background-color: #313335;
+    overflow-x: hidden;
     transition: z-index 1s ease;
+    background-color: #1E2323;
 }
 /**** BUTTON IN NO-SONGS DIVISION ****/
 .button-no-songs{
@@ -110,7 +111,7 @@ div#albums-container{
     line-height: 100%;
 }
 
-/* FOOTER */
+/* ************************************** FOOTER **************************************** */
 #footer{
     bottom: 0px;
     height: 60px;
@@ -119,8 +120,10 @@ div#albums-container{
 /*** SEEK BAR ***/ 
 div#seek-bar{
     width: 86%;
-    height: 5px;
+    height: 5px !important;
     border-radius: 3px;
+    background-color: #2B2C28;
+    margin: 9.5px 0px 3.5px 0px;
 }
 
 div#current-position{
@@ -138,8 +141,22 @@ div.backward-btn{
     border-bottom: 10px solid transparent;
     border-right: 10px solid royalblue;
 }
-div#play_pause{
-    height: 20px;
+/* div#play_pause{
+    transition: width 0.5s ease, height 0.5s ease, border-left 0.5s ease, border-right 0.5s ease;
+} */
+div.play{
+    width: 0px;
+    height: 0px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid #1E6479;
+    border-right: 0px solid transparent;
+}
+div.pause{
+    width: 6px;
+    height: 100%;
+    border-left: 5px solid #1E6479;
+    border-right: 5px solid #1E6479;
 }
 div#forward{
     height: 20px;

@@ -72,7 +72,7 @@ function call_meta_extractor(){
         if(fetched_songs_list.length == 0 && meta_extractor_caller_id){
             clearInterval(meta_extractor_caller_id);
             meta_extractor_caller_id = undefined;
-            document.getElementById('show-adding-songs').innerHTML = "Restart the player";
+            document.getElementById('show-adding-songs').innerHTML = "Restart the player for new songs to appear in list";
             return;
         }
         
