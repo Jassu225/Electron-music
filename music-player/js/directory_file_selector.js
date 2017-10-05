@@ -10,14 +10,11 @@ function fetchSongsFromFolders(){
     var path = dialog.showOpenDialog({
         properties: ['openDirectory', 'multiSelections']
     });
-    // console.log(path.length);
     if(path){
         // FETCHING SONGS FROM THE SELECTED DIRECTORY / DIRECTORIES
         song_fetcher.fetchSongsFromDirectories(path, (songs)=>{
-
             fetched_songs_list.push.apply(fetched_songs_list,songs);
             song_fetcher.freeSpace();
-
             // EXTRACTING META-DATA FROM FETCHED SONGS
             semaphore = 0;
             meta_extractor_caller_id = setInterval(call_meta_extractor, 25);
@@ -37,7 +34,6 @@ function fetchSongs(){
             var i1 = path[i].lastIndexOf('/');
             var i2 = path[i].lastIndexOf('\\');
             var index = i1 > i2 ? i1 : i2 ;
-            // console.log(path[i].slice( 0, index ) );
             var stats = fs.statSync(path[i]);
             var song = {
                 src: path[i],
@@ -56,7 +52,6 @@ function fetchSongs(){
             };
             fetched_songs_list.push(song);
         }
-
         // EXTRACTING META-DATA FROM FETCHED SONGS
         semaphore = 0;
         meta_extractor_caller_id = setInterval(call_meta_extractor, 25);
@@ -68,7 +63,6 @@ function fetchSongs(){
 function call_meta_extractor(){
     if(semaphore == 0){
         semaphore = 1;
-        // console.log(fetched_songs_list[meta_extractor_caller_count]);
         if(fetched_songs_list.length == 0 && meta_extractor_caller_id){
             clearInterval(meta_extractor_caller_id);
             meta_extractor_caller_id = undefined;
@@ -87,7 +81,6 @@ function call_meta_extractor(){
                 insertIntoAlbumsDB(song.album,song.src,song.cover);
                 insertIntoArtistsDB(song.artist,song.src);
             }
-            // console.log(song);
             semaphore = 0;
         });
     }
@@ -98,7 +91,6 @@ function insertIntoSongsDB(song){
         if(err)
             console.log(err);
         else{
-            console.log(newDoc);
             view_port.has_data = true;
         }
     });
@@ -109,7 +101,6 @@ function insertIntoAlbumsDB(album,path,cover){
         if(err)
             console.log(err);
         else if(doc){
-            console.log(doc);
             albumsDB.update({ _id: album }, { $push: { songs: path } }, {}, ()=>{
 
             });
@@ -123,7 +114,6 @@ function insertIntoAlbumsDB(album,path,cover){
                     console.log(err);
                 else{
                     console.log('album created successfully');
-                    console.log(newDoc);
                 }
             });
         }
@@ -135,7 +125,6 @@ function insertIntoArtistsDB(artist,path){
         if(err)
             console.log(err);
         else if(doc){
-            console.log(doc);
             artistsDB.update({ _id: artist }, { $push: { songs: path } }, {}, ()=>{
                 
             });
@@ -148,7 +137,6 @@ function insertIntoArtistsDB(artist,path){
                     console.log(err);
                 else{
                     console.log('artist created successfully');
-                    console.log(newDoc);
                 }
             });
         }

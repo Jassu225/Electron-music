@@ -71,16 +71,6 @@ div#add-songs{
     background-color: #1E2323;
 }
 /** SONGS CONTAINER **/
-/****  ALBUM ****/
-div.album{
-    margin-top: 20px;
-}
-.image-container{
-    
-}
-.image{
-    
-}
 /*** INNER SONGS CONTAINER ***/
 div#inner-songs-container{
     float: right;
@@ -99,9 +89,26 @@ div.songs-in-album:nth-child(odd){
 }
 /**** ALBUMS CONTAINER ****/
 div#albums-container{
-    overflow-x: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
     transition: z-index 1s ease;
     background-color: #1E2323;
+}
+/***** ALBUMS INNER CONTAINER *****/
+div#albums-inner-container{
+    height: 100%;
+}
+/****  ALBUM ****/
+div.album{
+    width: 200px;
+    height: 50%;
+}
+div.image-container{
+    width: 160px;
+    height: 180px;  
+}
+.image{
+    width: 120px;
 }
 /**** BUTTON IN NO-SONGS DIVISION ****/
 .button-no-songs{

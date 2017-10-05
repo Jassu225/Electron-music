@@ -13,7 +13,7 @@ var view_port = {
     next_song: 0,             //Index of song to be loaded next
     next_album: 0,             //Index of song to be loaded next
     next_artist: 0,             //Index of song to be loaded next
-    row_capacity: 0,                //max. no. of documents that can be fitted on view port
+    row_capacity: 4,                //no. of documents that can be fitted in a row
     active_main_section_division: document.getElementById("songs-container")     // Variable which contains object of currently visible "MAIN SECTION" element
 };
 // Used to fetch songs from directories
@@ -26,12 +26,19 @@ var fetched_songs_list = [];
 // MAIN SONGS LIST
 // CONTAINS META-DATA OF ALL SONGS
 var complete_list = [];
+
+// ALBUM LIST VARIABLES
 var albums_list = [];
+var index_album = 0;        // SPECIFIES NUMBER OF ALBUMS ADDED TO ALBUMS INNER CONTAINER
+
 var artists_list = [];
 
-// Audio player variables
+// HTML ELEMENTS
 var audio_player = document.getElementById("audio-player");
-var play_pause = $("#play_pause");
+var play_pause = $("div#play_pause");
+var albums_container = document.getElementById("albums-container");
+var albums_inner_container = document.getElementById("albums-inner-container");
+var albums = $('div.album');
 
 //Required databases for songs, albums and artists
 var songsDB = new database({
@@ -64,27 +71,28 @@ songsDB.find({}, (err,docs)=>{
 albumsDB.find({}, (err,docs)=>{
     if(docs){
         albums_list = Array.from(docs);
-        var albums = $('.album');
+        albums_inner_container.style.width = `${Math.ceil( albums_list.length / 2 ) * 200}px`;
         console.log(albums[0].childNodes[1].childNodes[1].childNodes[1]);
-        for(var i = 0; i < albums_list.length && i < 28; i++){
+        for(var i = 0; i < albums_list.length && i < 42; i++){
             // console.log(albums_list[i].cover);
-            try{
-                var dimensions = sizeOf(albums_list[i].cover);
-                // console.log(dimensions);
-                if(dimensions.width >= dimensions.height){
-                    albums[i].childNodes[1].childNodes[1].childNodes[1].classList.add("width-120");
-                    // albums[i].childNodes[1].childNodes[1].childNodes[1].classList.add("full-width");
-                } else{
-                    albums[i].childNodes[1].childNodes[1].childNodes[1].classList.add("height-160");
-                    // albums[i].childNodes[1].childNodes[1].childNodes[1].classList.add("full-height");
-                }
-            } catch(err){
-                console.log(err.code);
-            }
-            albums[i].childNodes[1].childNodes[1].childNodes[1].src = albums_list[i].cover;      //Image
-            albums[i].childNodes[3].childNodes[1].innerHTML = albums_list[i]._id;
+            // try{
+            //     var dimensions = sizeOf(albums_list[i].cover);
+            //     // console.log(dimensions);
+            //     if(dimensions.width >= dimensions.height){
+            //         albums[i].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[1].classList.add("width-120");
+            //         // albums[i].childNodes[1].childNodes[1].childNodes[1].classList.add("full-width");
+            //     } else{
+            //         albums[i].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[1].classList.add("height-160");
+            //         // albums[i].childNodes[1].childNodes[1].childNodes[1].classList.add("full-height");
+            //     }
+            // } catch(err){
+            //     console.log(err.code);
+            // }
+            albums[i].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[1].src = albums_list[i].cover;      //Image
+            albums[i].childNodes[1].childNodes[1].childNodes[3].childNodes[1].innerHTML = albums_list[i]._id;
             albums[i].classList.remove("hide");
         }
+        index_album = i;
     }
 });
 artistsDB.find({}, (err,docs)=>{
@@ -93,64 +101,6 @@ artistsDB.find({}, (err,docs)=>{
     }
 });
 
-window.addEventListener('resize',setContainersSize);
-
-function setContainersSizeAfter520ms(){
-    setTimeout(setContainersSize, 520);
-}
-// Changing size of image containers
-function setContainersSize(){
-    var width = $("div#songs-container").width();
-
-    if(width <= 700){       // 3 containers per row
-
-        if(!$('div.album').hasClass("col-4")){
-            removeColClasses($('div.album'));
-            $('div.album').addClass('col-4');
-        }
-        view_port.row_capacity = 3;
-
-    } else if( width <= 900){       // 4 containers per row
-
-        if(!$('div.album').hasClass("col-3")){
-            removeColClasses($('div.album'));
-            $('div.album').addClass("col-3");
-        }
-        view_port.row_capacity = 4;
-
-    } else if( width <= 1100){      // 5 containers per row
-
-        if(!$('div.album').hasClass("col-2_4")){
-            removeColClasses($('div.album'));
-            $('div.album').addClass("col-2_4");
-        }
-        view_port.row_capacity = 5;
-
-    } else if( width <= 1200){      // 6 containers per row
-
-        if(!$('div.album').hasClass("col-2")){
-            removeColClasses($('div.album'));
-            $('div.album').addClass("col-2");
-        }
-        view_port.row_capacity = 6;
-
-    } else if(width > 1200){        // 7 containers per row
-
-        if(!$('div.album').hasClass("col-1_7")){
-            removeColClasses($('div.album'));
-            $('div.album').addClass("col-1_7");
-        }
-        view_port.row_capacity = 7;
-
-    }
-}
-
-function removeColClasses(element){
-    var col_classes = "col-1_7 col-2 col-2_4 col-3 col-4";
-    element.removeClass(col_classes);
-}
-
-setContainersSize();
 // Settings for "image" class
 // Makes height 100% if height > width
 // Makes width 100% otherwise

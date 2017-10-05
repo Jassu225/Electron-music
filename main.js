@@ -59,9 +59,9 @@ function createWindow(){
     // Initializing window with some properties
     main_window = new BrowserWindow({
         width: 800,
-        height: 600,
+        height: 620,
         minWidth: 800,
-        minHeight: 600,
+        minHeight: 620,
         titleBarStyle: 'hidden',
         frame: true,
         transparent: false

@@ -9,5 +9,5 @@ document.getElementById('menu-icon').addEventListener('click', ()=>{
     side_navbar.style.transform = `translate(${x_values[side_navbar_toggle]}, 0px)`;
     $('#main-section').toggleClass("col-12 col-10");
     side_navbar_toggle = 1 - side_navbar_toggle;
-    setContainersSizeAfter520ms();
+    // setContainersSizeAfter520ms();
 });

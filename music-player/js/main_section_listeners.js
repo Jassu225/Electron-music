@@ -1,12 +1,12 @@
 
 // Adding Listener to "album" class in albums-container in main-section 
 $("div.album").click((event)=>{
-    console.log(event.currentTarget.childNodes[1].childNodes[1].childNodes[1].src);
+    console.log(event.currentTarget.childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[1].src);
     $("div#albums-container").removeClass("z-index-1000").addClass("z-index-1");
     $("div#album-page").removeClass("hide");
-    albumsDB.findOne({ _id: event.currentTarget.childNodes[3].childNodes[1].innerHTML }, (err,doc)=>{
+    albumsDB.findOne({ _id: event.currentTarget.childNodes[1].childNodes[1].childNodes[3].childNodes[1].innerHTML }, (err,doc)=>{
         console.log(doc);
-        document.getElementById("selected-album-cover").src = event.currentTarget.childNodes[1].childNodes[1].childNodes[1].src;
+        document.getElementById("selected-album-cover").src = event.currentTarget.childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[1].src;
         var parent = document.getElementById("songs-in-album-container");
         var children = "";
         for(var i = 0; i < doc.songs.length; i++){

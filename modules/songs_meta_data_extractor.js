@@ -33,7 +33,6 @@ var metadata_extractor = {
                 var location_without_drive = song['location'].substring(3);
                 var file_no_extension = song['name'].substring(0,song['name'].lastIndexOf('.'));
                 var img_path = `${appdata}/UserData/song-images/${drive}/${location_without_drive}/${file_no_extension}.${metadata.picture[0].format}`;
-                console.log(img_path);
                 fs.writeFile(img_path,metadata.picture[0].data,(err)=>{
                     if(err && err.code == 'ENOENT'){
                         console.log(err);
@@ -55,8 +54,6 @@ var metadata_extractor = {
             } else {
                 song['cover'] = './images/song.png';
             }
-            // console.log(__dirname.substring(0,));
-            // songsDB.put(`${l}`, song);
         });
         
         stream.on('end', ()=>{
