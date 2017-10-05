@@ -1,20 +1,12 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-        <title>Electron Music Player</title>
-        <link rel="stylesheet" href="./css/index.css"/>
-        <link rel="stylesheet" href="./css/main.css"/>
-    </head>
+    <head><title>Electron Music Player</title><link rel="stylesheet" href="./css/index.css"/><link rel="stylesheet" href="./css/main.css"/></head>
     <body class="position-relative">
         <div id="top-navbar" class="position-absolute full-width">
             <div class="col-1 full-height">
                 <div class="table full-height center">
                     <div class="inline table-cell vertically-middle center">
-                        <div id="menu-icon" class="cursor-pointer">
-                            <div class="menu-icon-div center"></div>
-                            <div class="menu-icon-div center"></div>
-                            <div class="menu-icon-div center"></div>
-                        </div>
+                        <div id="menu-icon" class="cursor-pointer"><div class="menu-icon-div center"></div><div class="menu-icon-div center"></div><div class="menu-icon-div center"></div></div>
                     </div>
                 </div>
             </div>
@@ -25,660 +17,67 @@
                     <div class="inline padding-13_5-8 height-18 cursor-pointer">Songs</div>
                     <div class="inline padding-13_5-8 height-18 cursor-pointer">Folders</div>
                     <div class="inline padding-13_5-8 height-18 cursor-pointer">Playlists</div>
-                    <div class="inline padding-13_5-8 height-18">
-                        <input id="search-bar" placeholder="Search ..." class="table-cell no-margin no-padding no-border text-white font-helvetica" />
-                    </div>
+                    <div class="inline padding-13_5-8 height-18"><input id="search-bar" placeholder="Search ..." class="table-cell no-margin no-padding no-border text-white font-helvetica" /></div>
                 </div>
             </div>
         </div>
         <div id="middle-section" class="position-absolute full-width">
-        <div id="side-navbar" class="z-index-2 col-2 full-height inline position-absolute font-helvetica center-text text-white dont-select-text no-margin">
-            <div class="cursor-pointer full-width height-40 table side-navbar-child">
-                <div class="table-cell vertically-middle">Home</div>
-            </div>
-            <div class="full-width height-40 table side-navbar-child cursor-pointer">
-                <div class="table-cell vertically-middle">Add Songs</div>
-            </div>
-            <div class="full-width height-40 table side-navbar-child cursor-pointer">
-                <div class="table-cell vertically-middle">Song Share</div>
-            </div>
-            <div class="full-width height-40 table side-navbar-child cursor-pointer">
-                <div class="table-cell vertically-middle">Settings</div>
-            </div>
-            <div class="full-width height-40 table side-navbar-child cursor-pointer">
-                <div class="table-cell vertically-middle">About</div>
-            </div>
-            <div class="full-width height-40 table side-navbar-child cursor-pointer">
-                <div class="table-cell vertically-middle">Feedback</div>
-            </div>
-        </div>
-        <div id="main-section" class="position-relative col-12 full-height float-right no-margin">
-            <div id="add-songs" class="full-width full-height center-text table position-absolute no-margin hide">
-                <div class="table-cell vertically-middle text-white font-helvetica dont-select-text">
-                    <p id="show-adding-songs" class="height-40 font-size-30 margin-20-0px cursor-default">No songs here.</p>
-                    <div class="center">
-                        <div class="inline padding-0-8">
-                            <div id="button-no-songs-add-folders" class="button-no-songs center table cursor-pointer">
-                                <div class="table-cell vertically-middle font-size-20">Add Folders</div>
-                            </div>
-                        </div>
-                        <div class="inline padding-0-8">
-                            <div id="button-no-songs-add-songs" class="button-no-songs center table cursor-pointer">
-                                <div class="table-cell vertically-middle font-size-20">Add Songs</div>
-                            </div>
-                        </div>
-                    </div>
+            <div id="side-navbar" class="z-index-2 col-2 full-height inline position-absolute font-helvetica center-text text-white dont-select-text no-margin">
+                <div class="cursor-pointer full-width height-40 table side-navbar-child">
+                    <div class="table-cell vertically-middle">Home</div>
+                </div>
+                <div class="full-width height-40 table side-navbar-child cursor-pointer">
+                    <div class="table-cell vertically-middle">Add Songs</div>
+                </div>
+                <div class="full-width height-40 table side-navbar-child cursor-pointer">
+                    <div class="table-cell vertically-middle">Song Share</div>
+                </div>
+                <div class="full-width height-40 table side-navbar-child cursor-pointer">
+                    <div class="table-cell vertically-middle">Settings</div>
+                </div>
+                <div class="full-width height-40 table side-navbar-child cursor-pointer">
+                    <div class="table-cell vertically-middle">About</div>
+                </div>
+                <div class="full-width height-40 table side-navbar-child cursor-pointer">
+                    <div class="table-cell vertically-middle">Feedback</div>
                 </div>
             </div>
-            <div id="songs-container" class="full-width full-height text-white font-helvetica table position-absolute dont-select-text no-margin">
-                <p id="no-songs" class="table-cell vertically-middle font-size-30 margin-20-0px cursor-default center-text hide">No songs here.</p>
-                <div id="inner-songs-container" class="position-relative full-height full-width no-margin">
-                    <div id="album-page" class="position-absolute full-width full-height text-white font-helvetica z-index-1000 no-margin hide">
-                        <div class="height-264">
-                            <div id="backToAlbum" class="inline float-right padding-10 cursor-pointer">Back to albums</div>
-                            <div class="inline float-left padding-30">
-                                <img id="selected-album-cover" class="height-200" src=""/>
-                            </div>
-                        </div>
-                        <div class="overflow-auto">
-                            <div id="songs-in-album-container"></div>
-                        </div>
-                    </div>
-                    <div id="albums-container" class="position-absolute full-width full-height z-index-1000 overflow-auto no-margin">
-                        <div id="albums-inner-container" class="no-margin position-relative">
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(0px,0px);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                                <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
+            <div id="main-section" class="position-relative col-12 full-height float-right no-margin">
+                <div id="add-songs" class="full-width full-height center-text table position-absolute no-margin hide">
+                    <div class="table-cell vertically-middle text-white font-helvetica dont-select-text">
+                        <p id="show-adding-songs" class="height-40 font-size-30 margin-20-0px cursor-default">No songs here.</p>
+                        <div class="center">
+                            <div class="inline padding-0-8">
+                                <div id="button-no-songs-add-folders" class="button-no-songs center table cursor-pointer">
+                                    <div class="table-cell vertically-middle font-size-20">Add Folders</div>
                                 </div>
                             </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(0px,100%);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                                <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(200px,0px);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(200px,100%);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(400px,0px);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(400px,100%);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(600px,0px);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(600px,100%);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(800px,0px);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(800px,100%);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(1000px,0px);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(1000px,100%);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(1200px,0px);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(1200px,100%);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(1400px,0px);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(1400px,100%);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(1600px,0px);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(1600px,100%);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(1800px,0px);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(1800px,100%);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(2000px,0px);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(2000px,100%);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(2200px,0px);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(2200px,100%);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(2400px,0px);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(2400px,100%);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(2600px,0px);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(2600px,100%);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(2800px,0px);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(2800px,100%);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(3000px,0px);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(3000px,100%);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(3200px,0px);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(3200px,100%);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(3400px,0px);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(3400px,100%);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(3600px,0px);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(3600px,100%);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(3800px,0px);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(3800px,100%);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(4000px,0px);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="album inline center-text position-absolute hide" style="transform:translate(4000px,100%);" album="">
-                                <div class="table full-width full-height">
-                                    <div class="table-cell vertically-middle">
-                                        <div class="image-container table center background-black">
-                                            <div class="table-cell vertically-middle center">
-                                            <img class="image" src="" data-src=""/>
-                                            </div>
-                                        </div>
-                                        <div class="album-description table full-width height-40">
-                                            <p class="no-margin table-cell vertically-middle"></p>
-                                        </div>
-                                    </div>
+                            <div class="inline padding-0-8">
+                                <div id="button-no-songs-add-songs" class="button-no-songs center table cursor-pointer">
+                                    <div class="table-cell vertically-middle font-size-20">Add Songs</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div id="songs-container" class="full-width full-height text-white font-helvetica table position-absolute dont-select-text no-margin">
+                    <p id="no-songs" class="table-cell vertically-middle font-size-30 margin-20-0px cursor-default center-text hide">No songs here.</p>
+                    <div id="inner-songs-container" class="position-relative full-height full-width no-margin">
+                        <div id="album-page" class="position-absolute full-width full-height text-white font-helvetica z-index-1000 no-margin hide">
+                            <div class="height-264">
+                                <div id="backToAlbum" class="inline float-right padding-10 cursor-pointer">Back to albums</div>
+                                <div class="inline float-left padding-30">
+                                    <img id="selected-album-cover" class="height-200" src=""/>
+                                </div>
+                            </div>
+                            <div class="overflow-auto">
+                                <div id="songs-in-album-container"></div>
+                            </div>
+                        </div>
+                        <div id="albums-container" class="position-absolute full-width full-height z-index-1000 overflow-auto no-margin"><div id="albums-inner-container" class="no-margin position-relative"></div></div>
+                    </div>
+                </div>
             </div>
-        </div>
         </div>
         <div id="footer" class="position-absolute full-width">
             <div class="padding-7-0 text-white font-helvetica">
@@ -691,28 +90,20 @@
             </div>
             <div>
                 <div class="width-124 height-20 center">
-                    <div id="backward" class="inline margin-0-10 cursor-pointer">
-                        <div class="backward-btn"></div>
-                        <div class="backward-btn"></div>
-                    </div>
+                    <div id="backward" class="inline margin-0-10 cursor-pointer"><div class="backward-btn"></div><div class="backward-btn"></div></div>
                     <div id="play_pause" class="inline margin-0-10 cursor-pointer play"></div>
-                    <div id="forward" class="inline margin-0-10 cursor-pointer">
-                        <div class="forward-btn"></div>
-                        <div class="forward-btn"></div>
-                    </div>
+                    <div id="forward" class="inline margin-0-10 cursor-pointer"><div class="forward-btn"></div><div class="forward-btn"></div></div>
                 </div>
             </div>
         </div>
         <script>
             window.$ = window.jQuery = require("./js/jquery-3.2.1.min.js");
         </script>
-        <!--<script src="./js/masonry.pkgd.min.js"></script>-->
+        <script src="./js/main_section_listeners.js"></script>
         <script src="./js/index.js"></script>
-        <!-- <script src="./js/resize_event.js"></script> -->
         <script src="./js/scroll_event.js"></script>
         <script src="./js/top_navbar_listeners.js"></script>
         <script src="./js/side_navbar_listeners.js"></script>
-        <script src="./js/main_section_listeners.js"></script>
         <script src="./js/directory_file_selector.js"></script>
         <script src="./js/footer_listeners.js"></script>
         <script src="./js/keyBoard_listeners.js"></script>

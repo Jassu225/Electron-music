@@ -9,8 +9,8 @@ document.getElementById("albums-container").addEventListener("scroll", (event)=>
             for(var i = index_album,counter = 0; counter < 14; i++,counter++,index_album++){
                 var index = counter + 14*next_album_set;
                 if( i < albums_list.length){
-                    albums[index].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[1].src = albums_list[i].cover;      //Image
-                    albums[index].childNodes[1].childNodes[1].childNodes[3].childNodes[1].innerHTML = albums_list[i]._id;
+                    albums[index].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].src = albums_list[i].cover;      //Image
+                    albums[index].childNodes[0].childNodes[0].childNodes[1].childNodes[0].innerHTML = albums_list[i]._id;
                 }
                 if(index_album % 2 == 0)
                     albums[index].style.transform = `translate(${i*100}px,0px)`;
@@ -26,8 +26,8 @@ document.getElementById("albums-container").addEventListener("scroll", (event)=>
     } else if( x < previously_removed_set){ // scrolled left
         for(var i = index_album - 56,counter = 0; i < albums_list.length && counter < 14; i++,counter++,index_album--){
             var index = counter + 14*(prev_album_set);
-            albums[index].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[1].src = albums_list[i].cover;      //Image
-            albums[index].childNodes[1].childNodes[1].childNodes[3].childNodes[1].innerHTML = albums_list[i]._id;
+            albums[index].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].src = albums_list[i].cover;      //Image
+            albums[index].childNodes[0].childNodes[0].childNodes[1].childNodes[0].innerHTML = albums_list[i]._id;
             if(index_album % 2 == 0)
                 albums[index].style.transform = `translate(${i*100}px,0px)`;
             else

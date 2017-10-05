@@ -38,69 +38,58 @@ var audio_player = document.getElementById("audio-player");
 var play_pause = $("div#play_pause");
 var albums_container = document.getElementById("albums-container");
 var albums_inner_container = document.getElementById("albums-inner-container");
-var albums = $('div.album');
+var albums;
 
 //Required databases for songs, albums and artists
-var songsDB = new database({
-    filename: `${appdata}/UserData/db/songs.db`,
-    autoload: true
-});
-var albumsDB = new database({
-    filename: `${appdata}/UserData/db/albums.db`,
-    autoload: true
-});
-var artistsDB = new database({
-    filename: `${appdata}/UserData/db/artists.db`,
-    autoload: true
-});
+var songsDB = new database({ filename: `${appdata}/UserData/db/songs.db`, autoload: true });
+var albumsDB = new database({ filename: `${appdata}/UserData/db/albums.db`, autoload: true });
+var artistsDB = new database({ filename: `${appdata}/UserData/db/artists.db`, autoload: true });
 
 songsDB.count({}, function (err, count) {
-    // count equals to 4
     if(count == 0){
         document.getElementById("no-songs").classList.remove("hide");
         document.getElementById("inner-songs-container").classList.add("hide");
     }
 });
-
 // Fetching data from database and storing in respective arrays
 songsDB.find({}, (err,docs)=>{
-    if(docs){
+    if(docs)
         complete_list = Array.from(docs);
-    }
 });
 albumsDB.find({}, (err,docs)=>{
-    if(docs){
+    if(docs){       //Fetching data operation is slower than addAlbumContainers() operation
         albums_list = Array.from(docs);
-        albums_inner_container.style.width = `${Math.ceil( albums_list.length / 2 ) * 200}px`;
-        console.log(albums[0].childNodes[1].childNodes[1].childNodes[1]);
-        for(var i = 0; i < albums_list.length && i < 42; i++){
-            // console.log(albums_list[i].cover);
-            // try{
-            //     var dimensions = sizeOf(albums_list[i].cover);
-            //     // console.log(dimensions);
-            //     if(dimensions.width >= dimensions.height){
-            //         albums[i].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[1].classList.add("width-120");
-            //         // albums[i].childNodes[1].childNodes[1].childNodes[1].classList.add("full-width");
-            //     } else{
-            //         albums[i].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[1].classList.add("height-160");
-            //         // albums[i].childNodes[1].childNodes[1].childNodes[1].classList.add("full-height");
-            //     }
-            // } catch(err){
-            //     console.log(err.code);
-            // }
-            albums[i].childNodes[1].childNodes[1].childNodes[1].childNodes[1].childNodes[1].src = albums_list[i].cover;      //Image
-            albums[i].childNodes[1].childNodes[1].childNodes[3].childNodes[1].innerHTML = albums_list[i]._id;
-            albums[i].classList.remove("hide");
-        }
-        index_album = i;
+        updateAlbumsUI();
     }
 });
 artistsDB.find({}, (err,docs)=>{
-    if(docs){
+    if(docs)
         artists_list = Array.from(docs);
-    }
 });
 
-// Settings for "image" class
-// Makes height 100% if height > width
-// Makes width 100% otherwise
+// Adding elements to songs inner container
+addAlbumContainers();
+function addAlbumContainers(){
+    var album;
+    for(var i = 0; i < 42; i++){
+        album = "";
+        if( i % 2 == 0)
+            album = `<div class="album inline center-text position-absolute hide" style="transform:translate(${i*100}px,0px);" album=""><div class="table full-width full-height"><div class="table-cell vertically-middle"><div class="image-container table center background-black"><div class="table-cell vertically-middle center"><img class="image" src="" data-src=""/></div></div><div class="album-description table full-width height-40"><p class="no-margin table-cell vertically-middle"></p></div></div></div></div>`;
+        else
+            album = `<div class="album inline center-text position-absolute hide" style="transform:translate(${(i-1)*100}px,100%);" album=""><div class="table full-width full-height"><div class="table-cell vertically-middle"><div class="image-container table center background-black"><div class="table-cell vertically-middle center"><img class="image" src="" data-src=""/></div></div><div class="album-description table full-width height-40"><p class="no-margin table-cell vertically-middle"></p></div></div></div></div>`;
+        albums_inner_container.innerHTML += album;
+    }
+    albums = document.getElementsByClassName("album");
+    addAlbumListeners();
+}
+
+function updateAlbumsUI(){
+    albums_inner_container.style.width = `${Math.ceil( albums_list.length / 2 ) * 200}px`;
+    console.log(albums[0]);
+    for(var i = 0; i < albums_list.length && i < 42; i++){
+        albums[i].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[0].src = albums_list[i].cover;      //Image
+        albums[i].childNodes[0].childNodes[0].childNodes[1].childNodes[0].innerHTML = albums_list[i]._id;
+        albums[i].classList.remove("hide");
+    }
+    index_album = i;
+}
