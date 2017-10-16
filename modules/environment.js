@@ -23,6 +23,6 @@ var env = {
         shell.get(`mkdir "${path}"`,(err,output,stderr)=>{
             callback(output,err);
         });
-    }
+    },
 }
 module.exports = env;

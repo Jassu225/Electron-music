@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Song Share</title>
+		<title>File Share</title>
 		<link rel="stylesheet" href="./songshare/index.css" />
 	</head>
 	<body>
-		<div id="searching-div">
-			<div id="sr-buttons-div">
-				<div class="sr-buttons" onclick="senderPanel()"><p>Send</p></div>
-				<div class="sr-buttons" onclick="receiverPanel()"><p>Receive</p></div>
-			</div>
-			<div id="sender" class="second-step scroll-music"></div>
-			<div id="receiver" class="second-step"></div>
-			<div id="btns" class="second-step">
-				<div id="btns-container">
-					<div id="send-btn" class="btns" onclick="send()"><p>Send</p></div>
-					<!--<div id="recv-btn" class="btns"><p>Receive</p></div>-->
+		<div id="root" class="full-width full-height">
+			<div id="buttons-container" class="full-width full-height" style="display:table;">
+				<div class="" style="display:table-cell;vertical-align:middle;">
+					<div id="sender" class="button font-size-20 font-roboto cursor-pointer" style="margin:0px auto 32px auto;" ><p>Send</p></div>
+					<div id="receiver" class="button font-size-20 font-roboto cursor-pointer" style="margin:auto;" ><p>Receive</p></div>
 				</div>
 			</div>
-			<div id="dialog-panel">
+			<div id="sender-container" class="scroll-music hide"></div>
+			<div id="receiver-container" class="hide"></div>
+			<div id="footer" class="hide">
+				<div id="send-btn" class="button font-size-20 font-roboto" style="width:100px;height:30px;line-height:30px;border-radius:6px;"><p>Send</p></div>
+			</div>
+			<div id="dialog-panel" class="hide">
 				<div id="msg-box">Initializing Server</div>
 			</div>
 		</div>
 	</body>
-	<script src="./songshare/songshare.js"></script>
-	<script src="./songshare/songjs.js"></script>
+	<script src="./songshare/index.js"></script>
+	<script src="./songshare/songs.js"></script>
 	<script src="./songshare/server.js"></script>
 	<script src="./songshare/client.js"></script>
 </html>

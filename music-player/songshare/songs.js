@@ -1,4 +1,3 @@
-var {ipcRenderer} = require('electron');
 ipcRenderer.on('recv-song-info', (event, song) => {
     var i,j;
     for(i=0;i<num_of_songs;i++){

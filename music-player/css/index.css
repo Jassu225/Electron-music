@@ -123,7 +123,8 @@ html,body{
 }
 /** FONT-FAMILY **/
 .font-helvetica {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-family: 'Roboto', sans-serif;
 }
 
 /** FONT-SIZE **/
@@ -148,7 +149,10 @@ html,body{
     background: -moz-linear-gradient(red, yellow); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#333,#555,#333); /* Standard syntax (must be last) */
 }
-
+/** HOVER **/
+/* .hover-grey:hover{
+    background-color: rgb(128, 123, 123);
+} */
 /** LETTER SPACING **/
 .letter-spacing-1_5{
     letter-spacing: 1.5px;
@@ -166,6 +170,13 @@ html,body{
 }
 .margin-0-10{
     margin: 0px 10px;
+}
+/** OVERFLOW **/
+.overflow-hidden{
+    overflow: hidden;
+}
+.text-overflow-ellipsis{
+    text-overflow: ellipsis;
 }
 /** PADDING **/
 .no-padding{
@@ -224,6 +235,9 @@ html,body{
 .width-160{
     width: 160px;
 }
+.width-200{
+    width: 200px;
+}
 .full-height{
     height: 100%;
 }
@@ -263,7 +277,10 @@ html,body{
 .dont-select-text{
     user-select: none;
 }
-
+/** WHITESPACE **/
+.white-space-nowrap{
+    white-space: nowrap;
+}
 /** Z-INDEX I.E. STACKING OF ELEMENTS**/
 .z-index-1{
     z-index: 1;

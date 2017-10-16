@@ -4,7 +4,7 @@
     background-color: #0F0D0D;     /*#0099cc*/
     text-align: center;
     height: 45px;
-    transform: translate(0px,0px);
+    transform: translate3d(0px,0px,0px);
 }
 
 div#top-nav-menu div div:hover{
@@ -40,18 +40,21 @@ div#top-nav-menu div div:hover{
 /* ******************************************* MIDDLE SECTION ************************************************** */
 div#middle-section{
     height: calc(100% - 105px);
-    transform: translate(0px, 45px);
+    transform: translate3d(0px, 45px,0px);
     background-color: #1E2323;
 }
 
 /** SIDE NAVIGATION BAR **/
 #side-navbar{
     background-color: rgba(26, 24, 23, 1);
-    transform: translate(calc(-1 * 100%), 0px);
+    transform: translate3d(calc(-1 * 100%), 0px,0px);
     transition: transform 0.3s linear;
 }
 .side-navbar-child:nth-child(even){
     background-color: #0E0C0C;
+}
+.side-navbar-child:hover{
+    background-color: rgb(110, 114, 114);
 }
 
 /**  MAIN SECTION **/
@@ -59,7 +62,9 @@ div#main-section{
     transition: width 0.3s linear;
     background-color: #1E2323;
 }
-
+div.active-main-page{
+    z-index: 1000 !important;
+}
 /** NO-SONGS DIVISION **/
 /* #no-songs{
     width: 100%;
@@ -79,29 +84,33 @@ div#inner-songs-container{
     background-color: #1E2323;
 }
 /**** ALBUM DISPLAY PAGE ****/
-div#album-page{
+div#album-page, div#artist-page{
     transition: z-index 1s ease;
     background-color: #1E2323;
 }
-/******* SONGS IN SELECTED ALBUM *******/
-div.songs-in-album:nth-child(odd){
+/******* SONGS IN SELECTED ALBUM & ARTIST *******/
+div.songs-in-album:nth-child(odd),div.songs-in-artist:nth-child(odd){
     background-color: #161819;
 }
-/**** ALBUMS CONTAINER ****/
-div#albums-container{
+div.songs-in-album:hover, div.songs-in-artist:hover{
+    background-color: rgb(79, 82, 87);
+}
+/**** ALBUMS CONTAINER & ARTISTS CONTAINER ****/
+div#albums-container, div#artists-container{
     overflow-x: auto;
     overflow-y: hidden;
     transition: z-index 1s ease;
     background-color: #1E2323;
 }
-/***** ALBUMS INNER CONTAINER *****/
-div#albums-inner-container{
+/***** ALBUMS INNER CONTAINER & ARTISTS INNER CONTAINER *****/
+div#albums-inner-container,div#artists-inner-container{
     height: 100%;
 }
-/****  ALBUM ****/
-div.album{
+/****  ALBUM & ARTIST ****/
+div.album,div.artist{
     width: 200px;
     height: 50%;
+    margin: 0px 20px;
 }
 div.image-container{
     width: 160px;
@@ -109,6 +118,23 @@ div.image-container{
 }
 .image{
     width: 120px;
+}
+/* ARTIST ICON */
+div#artist-head{
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    border: 3px solid #555555;
+    margin: auto;
+}
+div#artist-body{
+    width: 100px;
+    height: 50px;
+    border-top-left-radius: 53px; 
+    border-top-right-radius: 53px;
+    border: 3px solid #555555;
+    border-bottom: 0;
+    margin: auto;
 }
 /**** BUTTON IN NO-SONGS DIVISION ****/
 .button-no-songs{
