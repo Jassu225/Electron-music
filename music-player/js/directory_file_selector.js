@@ -26,7 +26,7 @@ function fetchSongs(){
     var path = dialog.showOpenDialog({
         properties: ['openFile', 'multiSelections']
     });
-    console.log(path);
+    // console.log(path);
 
     if(path){
         // FETCHING SONGS FROM THE SELECTED DIRECTORY / DIRECTORIES

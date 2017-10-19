@@ -83,4 +83,12 @@ function addListenersToSongsInArtist(){
     });
 }
 
+// Keydown listener function for textarea
+document.getElementById("feedback-field").addEventListener("keyup", (event)=>{
+    document.getElementById("chars-left").innerHTML = `${500 - document.getElementById("feedback-field").value.length} characters left.`;
+});
 
+// document.body.addEventListener("keydown",(event)=>{
+//     var x = event.which || event.keyCode;
+//     console.log(x)
+// })

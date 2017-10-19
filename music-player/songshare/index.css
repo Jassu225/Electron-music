@@ -1,12 +1,14 @@
 body,html{
     height: 100%;
     margin:0px;
-    overflow: auto;
+    overflow: hidden;
+    color: rgb(255, 255, 255);
+    user-select: none;
 }
 body{
     background-color: rgb(27, 31, 34);
 }
-p{
+p,div{
     margin: 0px;
 }
 /* GENERIC CSS */
@@ -18,6 +20,10 @@ p{
 .hide{
     display: none !important;
 }
+/** FLOAT **/
+.float-left{
+    float: left;
+}
 /** FONT **/
 .font-century-gothic{
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
@@ -25,8 +31,11 @@ p{
 .font-roboto{
     font-family: 'Roboto', sans-serif;
 }
-.font-size-20{
+.font-20{
     font-size: 20px;
+}
+.font-30{
+    font-size: 30px;
 }
 /** HEIGHT **/
 .full-height{
@@ -41,12 +50,36 @@ p{
 #root{
     display: flex;
     flex-direction: column;
+    overflow: auto;
+}
+/** HEADER **/
+#header{
+    min-width: 600px;
+    height: 30px;
+    background-color: rgb(67, 69, 70);
 }
 /** SENDER AND RECEIVER SONGS CONTAAINERS **/
 #sender-container, #receiver-container{
-    flex: 1 0 auto;
+    flex: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
     min-height: 350px;
     min-width: 600px;
+}
+.file{
+    min-width: 600px;
+    margin:10px auto;
+    height:25px;
+    font-weight: 200;
+    padding-left: 15px;
+    border-bottom: 2px solid rgb(15, 14, 14);
+}
+.file-name{
+    display:inline-block;
+    width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 /*** BUTTON CLASS ***/
 .button{
@@ -54,7 +87,6 @@ p{
     height: 40px;
     background-color: rgb(18,88,119);
     border-radius: 10px;
-    color: rgb(255, 255, 255);
     text-align: center;
     font-weight: 300;
     letter-spacing: 1.5px;
@@ -70,4 +102,20 @@ p{
 #send-btn{
     float:right;
     margin: 15px 30px 15px 0px;
+}
+/* receivers-list */
+#receivers-list{
+    background-color: rgb(31, 28, 28);
+    overflow: auto;
+}
+/** REEIVER **/
+.receiver{
+    height: 30px;
+    font-weight: 300;
+    line-height: 30px;
+    padding-left: 20px;
+}
+.receiver:hover{
+    background-color: rgb(153, 146, 146);
+    color: black;
 }

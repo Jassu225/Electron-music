@@ -143,7 +143,25 @@ div#artist-body{
     background-color: #20578B;
     line-height: 100%;
 }
-
+/** FEEDBACK SECTION **/
+#feedback-field{
+    float:left;
+    margin:30px 30px 5px 30px;
+    background-color: black;
+    color: rgb(192, 192, 192);
+    font-size: 18px;
+    font-weight: 300;
+}
+#feedback-field:focus{
+    outline: rgb(44, 85, 122) solid 2px;
+}
+#chars-left{
+    color:white;
+    font-size:20px;
+    font-weight: 300;
+    text-align:left;
+    margin-left:30px;
+}
 /* ************************************** FOOTER **************************************** */
 #footer{
     bottom: 0px;
