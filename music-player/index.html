@@ -89,7 +89,14 @@
                         <div id="artists-container" class="position-absolute full-width full-height z-index-1 overflow-auto no-margin"><div id="artists-inner-container" class="no-margin position-relative"></div></div>
                     </div>
                 </div>
-                <div id="feedback" class="full-width full-height center-text table position-absolute no-margin hide"><div style="height:305px;"><textarea id="feedback-field" placeholder="Write your feedback here..." class="font-helvetica" rows="12" cols="50" maxlength="500"></textarea></div><div><p id="chars-left" class="font-helvetica">500 characters left.</p></div></div>
+                <div id="feedback" class="full-width full-height table position-absolute no-margin hide">
+                    <form id="feedback-form" action="">
+                        <div style="height:305px;"><textarea id="feedback-field" placeholder="Write your feedback here..." class="font-helvetica" rows="12" cols="50" maxlength="500" name="feed" required></textarea></div>
+                        <div><p id="chars-left" class="font-helvetica">500 characters left.</p></div>
+                        <input type="email" name="email" style="width:300px;display:block;margin:0px 0px 30px 30px;font-size:18px;font-weight:300;" class="font-helvetica text-white" placeholder="email-id" required />
+                        <input type="submit" style="display:block;margin:30px 0px 0px 30px;width:120px;height:35px;background-color:#078da5;font-size:18px;font-weight:400;" class="font-helvetica text-white cursor-pointer" />
+                    </form>
+                </div>
             </div>
         </div>
         <div id="footer" class="position-absolute full-width">

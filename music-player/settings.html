@@ -2,28 +2,23 @@
 <html>
     <head>
         <title>Settings</title>
-        <link rel="stylesheet" href="./settings/settings.css"/>
+        <link rel="stylesheet" href="./settings/index.css"/>
     </head>
-    <body onbeforeunload="">
-        <div class="category" onclick="showItem(this,'window-settings')"><p><img src="./images/dropdown.png"/>Window Settings</p></div>
-        <div id="window-settings" class="item">
-            <div class="paragraphs"><p>Title-Bar and Footer Color : &nbsp;</p></div>
-            <div class="inputs"><input type="color" value="#1e90ff" onchange="changeWindowBorderColor(this.value)"/></div><br />
-            <div class="paragraphs advanced"><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (OR) <span><br /></span>Gradient (Upto 7 colors) : &nbsp;</p></div>
-            <div id="color-stops">
-                <div class="inputs advanced">color stop 1 : <input id="color-stop1" type="color" value="#1e90ff"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="number" step="0.01" min="0" max="100" onchange="linearGradient(1,this.value)"/></div>
-                <div class="inputs advanced">color stop 2 : <input id="color-stop2" type="color" value="#1e90ff"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="number" step="0.01" min="0" max="100" onchange="linearGradient(2,this.value)"/></div>
-                <div class="inputs advanced">color stop 3 : <input id="color-stop3" type="color" value="#1e90ff"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="number" step="0.01" min="0" max="100" onchange="linearGradient(3,this.value)"/></div>
-                <div class="inputs advanced">color stop 4 : <input id="color-stop4" type="color" value="#1e90ff"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="number" step="0.01" min="0" max="100" onchange="linearGradient(4,this.value)"/></div>
-                <div class="inputs advanced">color stop 5 : <input id="color-stop5" type="color" value="#1e90ff"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="number" step="0.01" min="0" max="100" onchange="linearGradient(5,this.value)"/></div>
-                <div class="inputs advanced">color stop 6 : <input id="color-stop6" type="color" value="#1e90ff"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="number" step="0.01" min="0" max="100" onchange="linearGradient(6,this.value)"/></div>
-                <div class="inputs advanced">color stop 7 : <input id="color-stop7" type="color" value="#1e90ff"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="number" step="0.01" min="0" max="100" onchange="linearGradient(7,this.value)"/></div>
+    <body>
+        <div id="root">
+            <div class="main-category">
+                <p class="heading">Colors</p>
+                <div id="colors-container" class="category-body hide">
+                </div>
+            </div>
+            <div class="main-category">
+                <p class="heading">Fonts</p>
             </div>
         </div>
     </body>
-    <!--<script>
-        window.$ = window.jQuery = require("jquery");
+    <script>
+        window.$ = window.jQuery = require("./js/jquery-3.2.1.min.js");
         // window.masonry = require('masonry-layout');
-    </script>-->
-    <script src="./settings/settings.js"></script>
+    </script>
+    <script src="./settings/index.js"></script>
 </html>

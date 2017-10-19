@@ -68,7 +68,7 @@ function createWindow(){
     });
 }
 
-// Asynchronous call lsteners
+// Asynchronous call listeners
 ipcMain.on('message-from-settings-window',(event,protocol,propertyValue) => {
     win.webContents.send(protocol, propertyValue);
 });

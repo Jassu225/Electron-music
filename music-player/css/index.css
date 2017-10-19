@@ -124,7 +124,7 @@ html,body{
 /** FONT-FAMILY **/
 .font-helvetica {
     /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 /** FONT-SIZE **/
@@ -149,10 +149,18 @@ html,body{
     background: -moz-linear-gradient(red, yellow); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#333,#555,#333); /* Standard syntax (must be last) */
 }
-/** HOVER **/
-/* .hover-grey:hover{
-    background-color: rgb(128, 123, 123);
-} */
+/** INPUT **/
+input[type="email"]{
+    background-color: transparent;
+    border-bottom: 2px solid rgb(201, 201, 201);
+}
+input{
+    padding: 0px;
+    border: 0px;
+}
+input:focus{
+    outline: 0px;
+}
 /** LETTER SPACING **/
 .letter-spacing-1_5{
     letter-spacing: 1.5px;
