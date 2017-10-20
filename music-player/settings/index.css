@@ -29,7 +29,27 @@ div,p{
 .heading{
     font-size: 24px;
     font-weight: 400;
+    color: rgb(71, 211, 253);
     padding:10px 0px 10px 30px;
     border-bottom: 2px solid #B5B5B5;
+    cursor: pointer;
+}
+.sub-category-container{
+    padding:20px 0px 0px 20px;
+    background-color: rgb(63, 63, 63);
+}
+.sub-heading{
+    padding: 0px 0px 20px 20px;
+    margin-left: 40px;
+    font-size: 20px;
+    color: rgb(238, 228, 83);
+    cursor: pointer;
+}
+.sub-category-body{
+    margin-left: 60px;
+    padding-left: 20px;
+    background-color: rgb(70, 70, 70);
+}
+.set{
     cursor: pointer;
 }

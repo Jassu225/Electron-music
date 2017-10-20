@@ -69,6 +69,6 @@ function createWindow(){
 }
 
 // Asynchronous call listeners
-ipcMain.on('message-from-settings-window',(event,protocol,propertyValue) => {
-    win.webContents.send(protocol, propertyValue);
+ipcMain.on('message-from-settings-window',(event,protocol,object) => {
+    main_window.webContents.send(protocol,object);
 });

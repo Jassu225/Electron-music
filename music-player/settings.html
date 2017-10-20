@@ -6,13 +6,21 @@
     </head>
     <body>
         <div id="root">
-            <div class="main-category">
-                <p class="heading">Colors</p>
+            <div class="category-container"><p class="heading">Colors</p>
                 <div id="colors-container" class="category-body hide">
+                    <div class="sub-category-container"><p class="sub-heading">Text-Colors</p>
+                        <div class="sub-category-body hide">
+                            <div>Top-Navbar &nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<input type="color" category="top-navbar" property="text-color" /> &nbsp;&nbsp;&nbsp;&nbsp; <span class="set">Set</span></div>
+                        </div>
+                    </div>
+                    <div class="sub-category-container"><p class="sub-heading">Background-Colors</p>
+                        <div class="sub-category-body hide">
+                                <div>Top-Menu &nbsp;:&nbsp;&nbsp;<input type="color" value="#123456"/></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="main-category">
-                <p class="heading">Fonts</p>
+            <div class="category-container"><p class="heading">Fonts</p>
             </div>
         </div>
     </body>
@@ -21,4 +29,5 @@
         // window.masonry = require('masonry-layout');
     </script>
     <script src="./settings/index.js"></script>
+    <script src="./settings/listeners.js"></script>
 </html>

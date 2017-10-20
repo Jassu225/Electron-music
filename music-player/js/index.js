@@ -1,4 +1,4 @@
-const {remote} = require('electron');
+const {ipcRenderer,remote} = require('electron');
 const {app,dialog} = require('electron').remote;    //first usage in directory_selector.js
 const {BrowserWindow} = require('electron').remote;
 const fs = require('fs');               //first usage in directory_selector.js
