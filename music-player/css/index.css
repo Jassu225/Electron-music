@@ -3,7 +3,9 @@ html,body{
     height: 100%;
     margin: 0px;
 }
-
+ul{
+    margin: 0px;
+}
 /************************************************************************************************************************/
 /* GENERIC CLASSES */
 
@@ -137,8 +139,8 @@ html,body{
 }
 
 /** FONT-WEIGHT **/
-.font-wt-400 {
-    font-weight: 400;
+.font-wt-500 {
+    font-weight: 500;
 }
 
 /** GRADIENTS **/
@@ -234,8 +236,8 @@ input:focus{
 .width-70{
     width: 70px;
 }
-.width-124{
-    width: 124px;
+.width-128{
+    width: 128px;
 }
 .width-120{
     width: 120px;

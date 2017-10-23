@@ -3,13 +3,8 @@ function fetchFiles(){
     var path = dialog.showOpenDialog({
         properties: ['openFile', 'multiSelections']
     });
-
-    if(file_count >= 100){
-        alert('Cannot add more files. Maximum limit reached.');
-        return;
-    }
     if(path){
-        for(var i = 0; i < path.length; i++){
+        for(var i = 0; i < path.length && file_count < 100; i++){
             var i1 = path[i].lastIndexOf('/');
             var i2 = path[i].lastIndexOf('\\');
             var index = i1 > i2 ? i1 : i2 ;
@@ -19,7 +14,10 @@ function fetchFiles(){
                                             `<p style="display:inline-block;width:60px;padding-left:20px;">${formatBytes(stats.size)}</p>` +
                                             `<p style="width:20px;line-height:16px;float:right;font-size:30px;cursor:pointer;margin-right:12px;" onclick="removeFile(this)">&times;</p>` +
                                           `</div>`;
+            file_count++;
         }
+        if( i != path.length)
+            alert('Cannot add more files. Maximum limit reached.');
     }
 }
 

@@ -12,7 +12,7 @@ function openSongSharingWindow() {
         });
 
         songSharingWindow.loadURL(url.format({
-            pathname: `${__dirname}/share-song.html`,
+            pathname: `${__dirname}/songshare/index.html`,
             protocol: 'file:',
             slashes: true
         }));

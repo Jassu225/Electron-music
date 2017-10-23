@@ -88,12 +88,25 @@ div#album-page, div#artist-page{
     transition: z-index 1s ease;
     background-color: #1E2323;
 }
+div#context-menu-album{
+    width: 200px;
+    height: 250px;
+    position: absolute;
+    text-align: center;
+    background-color: rgb(228, 228, 228);
+}
 /******* SONGS IN SELECTED ALBUM & ARTIST *******/
 div.songs-in-album:nth-child(odd),div.songs-in-artist:nth-child(odd){
     background-color: #161819;
 }
 div.songs-in-album:hover, div.songs-in-artist:hover{
     background-color: rgb(79, 82, 87);
+}
+div.songs-in-album ul,div.songs-in-album li{
+    display: inline-block;
+}
+div.songs-in-album li{
+    padding: 0px 15px;
 }
 /**** ALBUMS CONTAINER & ARTISTS CONTAINER ****/
 div#albums-container, div#artists-container{

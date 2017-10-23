@@ -12,7 +12,7 @@ function openSettingsWindow() {
         });
 
         settingsWindow.loadURL(url.format({
-            pathname: `${__dirname}/settings.html`,
+            pathname: `${__dirname}/settings/index.html`,
             protocol: 'file:',
             slashes: true
         }));

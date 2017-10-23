@@ -72,3 +72,7 @@ function createWindow(){
 ipcMain.on('message-from-settings-window',(event,protocol,object) => {
     main_window.webContents.send(protocol,object);
 });
+ipcMain.on('restart-player',(event) => {
+    app.relaunch();
+    app.quit();
+});
