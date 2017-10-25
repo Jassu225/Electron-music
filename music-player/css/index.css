@@ -152,8 +152,8 @@ ul{
     background: linear-gradient(#333,#555,#333); /* Standard syntax (must be last) */
 }
 /** INPUT **/
-input[type="email"]{
-    background-color: transparent;
+input[type="email"],input[type="text"]{
+    background-color:transparent;
     border-bottom: 2px solid rgb(201, 201, 201);
 }
 input{

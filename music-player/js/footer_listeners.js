@@ -25,10 +25,11 @@ audio_player.addEventListener("pause", ()=>{
     play_pause.removeClass("pause").addClass("play");
 });
 audio_player.addEventListener("ended",()=>{
+    clearTimeInterval();
     console.log("audio ended");
     play_pause.removeClass("pause").addClass("play");
     document.getElementById("end-time").innerHTML = getTime(audio_player.duration);
-    clearTimeInterval();
+    activePlaylist.nextSong();
 });
 
 // Seek-bar listeners
@@ -45,12 +46,18 @@ document.getElementById("seek-bar").addEventListener("click", (event)=>{
     document.getElementById("current-position").style.width = `${percent}%`;
 });
 
-// play pause button listeners
+// Audio controls listeners
 play_pause.click(()=>{
     if(play_pause.hasClass("play"))
         audio_player.play();
     else
         audio_player.pause();
+});
+document.getElementById("backward").addEventListener("click",()=>{
+    activePlaylist.previousSong();
+});
+document.getElementById("forward").addEventListener("click",()=>{
+    activePlaylist.nextSong();
 });
 function playSong(){
     audio_player.load();

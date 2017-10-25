@@ -71,7 +71,7 @@
                                 </div>
                             </div>
                             <div class="overflow-auto" style="flex:auto;position:relative;">
-                                <div id="context-menu-album" class="hide" style="color:black;" onmouseleave="this.classList.add('hide')"></div>
+                                <div id="context-menu-album" class="hide" style="color:black;z-index:5;" onmouseleave="this.classList.add('hide')" onclick="this.classList.add('hide')"></div>
                                 <div id="songs-in-album-container"></div>
                             </div>
                         </div>
@@ -117,9 +117,20 @@
                 </div>
             </div>
         </div>
+        <div id="modal" class="hide">
+            <div class="modal-content">
+                <span id="close-modal">&times;</span>
+                <h3>New Playlist Name</h3>
+                <div><input id="playlistName" type="text" /></div>
+                <div class="button" onclick="savePlaylist()">OK</div>
+                <div id="modal-error" class="error"></div>
+            </div>
+        </div>
         <script>
             window.$ = window.jQuery = require("./js/jquery-3.2.1.min.js");
         </script>
+        <script src="./js/classes.js"></script>
+        <script src="./js/declarations.js"></script>
         <script src="./js/main_section_listeners.js"></script>
         <script src="./js/index.js"></script>
         <script src="./js/scroll_event.js"></script>
@@ -128,6 +139,7 @@
         <script src="./js/side_navbar_listeners.js"></script>
         <script src="./js/directory_file_selector.js"></script>
         <script src="./js/footer_listeners.js"></script>
+        <script src="./js/modal.js"></script>
         <script src="./js/keyBoard_listeners.js"></script>
         <script src="./js/song_share_window.js"></script>
         <script src="./js/settings_functions.js"></script>

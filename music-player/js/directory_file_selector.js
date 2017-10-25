@@ -31,9 +31,8 @@ function fetchSongs(){
     if(path){
         // FETCHING SONGS FROM THE SELECTED DIRECTORY / DIRECTORIES
         for(var i = 0; i < path.length; i++){
-            var i1 = path[i].lastIndexOf('/');
-            var i2 = path[i].lastIndexOf('\\');
-            var index = i1 > i2 ? i1 : i2 ;
+            path[i] = path[i].replace(/\\/g, '/');
+            var index = path[i].lastIndexOf('/');
             var stats = fs.statSync(path[i]);
             var song = {
                 src: path[i],

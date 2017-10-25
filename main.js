@@ -4,9 +4,44 @@ const url = require('url');
 const fs = require('fs');
 const mm = require('musicmetadata');
 const destroy = require('destroy');
+const environment = require("./modules/environment.js");
 
 //Variables 
 const app_data_folder = app.getPath('userData');
+//Creating required directories if not exists
+fs.stat(`${app_data_folder}/UserData/db`,(err,stats)=>{
+    if(err && err.code == "ENOENT"){
+        environment.mkdir(`${app_data_folder}/UserData/db`, (output,err)=>{
+            if(err)
+                console.log(err);
+            else
+                console.log("directory successfully created");
+        });
+    } else
+        console.log(stats);
+});
+fs.stat(`${app_data_folder}/UserData/song-images`,(err,stats)=>{
+    if(err && err.code == "ENOENT"){
+        environment.mkdir(`${app_data_folder}/UserData/song-images`, (output,err)=>{
+            if(err)
+                console.log(err);
+            else
+                console.log("directory successfully created");
+        });
+    } else
+        console.log(stats);
+});
+// fs.stat(`${app_data_folder}/UserData/playlists`,(err,stats)=>{
+//     if(err && err.code == "ENOENT"){
+//         environment.mkdir(`${app_data_folder}/UserData/playlists`, (output,err)=>{
+//             if(err)
+//                 console.log(err);
+//             else
+//                 console.log("directory successfully created");
+//         });
+//     } else
+//         console.log(stats);
+// });
 let main_window;
 
 // This method will be called when Electron has finished
@@ -59,6 +94,9 @@ function createWindow(){
     // Open the DevTools.
     main_window.webContents.openDevTools();
 
+    main_window.once('ready-to-show', () => {
+        // main_window.show();
+    });
     // Emitted when the window is closed.
     main_window.on('closed', () => {
         // Dereference the window object, usually you would store windows
@@ -74,5 +112,5 @@ ipcMain.on('message-from-settings-window',(event,protocol,object) => {
 });
 ipcMain.on('restart-player',(event) => {
     app.relaunch();
-    app.quit();
+    app.exit();
 });

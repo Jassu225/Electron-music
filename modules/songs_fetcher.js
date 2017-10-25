@@ -12,11 +12,12 @@ var handler = {
 
             for (var i = 0; i < files.length; i++) {
                 var song_path = `${dirList[k]}/${files[i]}`;
+                song_path = song_path.replace(/\\/g,"/");
                 var stats = fs.statSync(song_path);
                 if( stats.isDirectory() ){
                     dirList.push(song_path);
                 } else if(stats.isFile() && song_path.substr(-4) ==='.mp3'){
-                    var song = { 
+                    var song = {
                         src:song_path,
                         size_byte:Number(stats['size']),
                         name : files[i],
